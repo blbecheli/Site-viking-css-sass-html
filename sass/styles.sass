@@ -1,0 +1,439 @@
+*
+    margin: 0
+    padding: 0
+
+
+$text-grey: #828B9A
+$text-font: Judson, serif
+$text-color-title: #ADADAD
+
+@mixin subtitles
+    color: $text-color-title
+    font-weight: 600
+    font-size: 28px
+    text-transform: uppercase
+
+@mixin subH2
+    font-family: $text-font
+    font-weight: 700
+    font-size: 5rem
+    color: #ffff
+    line-height: 98px
+
+@mixin button
+    width: 183px
+    height: 70px
+    background-color: transparent
+    border: 1px solid $text-color-title
+    color: $text-color-title
+    font-size: 1.2rem
+    text-transform: uppercase
+    font-weight: 300
+    margin-top: 5%
+    
+@mixin mobile
+  @media (max-width: 425px)
+    @content
+        
+
+body
+    background-color: #1E1E1E
+    // color: #FFFFFF
+    font-family: 'Roboto', sans-serif
+
+    @include mobile
+        font-size: 14px
+
+header
+    width: 100vw
+    height: 100vh
+    background-image: url("../img/Banner-Background.png")
+    background-size: cover
+    background-repeat: no-repeat
+    
+nav
+    padding: 2rem 6rem 0 6rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    @include mobile
+        display: block
+
+    div
+        p
+            font-family: $text-font
+            font-weight: 700
+            font-size: 2rem
+            color: #40454D  
+
+.nav__list
+    width: 30%
+    ul
+        color: $text-grey
+        display: flex
+        list-style: none
+        justify-content: space-between 
+        font-weight: 600  
+
+        @include mobile
+            gap: 20px
+            
+
+        li
+            a
+                text-decoration: none
+                text-transform: uppercase
+                color: $text-grey
+
+.iceland    
+    margin-top: 13.5%
+    margin-left: 66.6%
+
+    @include mobile
+        margin: auto
+
+    h1
+        font-size: 7rem
+        font-weight: 400
+        font-family: $text-font
+
+        @include mobile
+            text-align: center
+    
+    p
+        @include subtitles
+        @include mobile
+            text-align: center
+        
+        &:before          
+            content: ""
+            display: inline-block
+            width: 15%
+            height: 1.5px
+            background-color: $text-grey
+            margin-right: 5px
+            margin-bottom: .8%
+
+            @include mobile
+                display: none
+
+.ice
+    width: 50%    
+    margin: 10% 25% 0 25%
+    text-align: center
+
+    @include mobile
+        width: 90vw
+        // margin-left: 5%
+        // margin-right: 5%
+        margin: -25% 0% 0% 0%
+
+    .ice__title
+        color: $text-color-title
+        text-transform: uppercase
+        font-size: 1.5rem
+        font-weight: 600
+        padding-bottom: 32px
+        @include mobile
+            text-align: center
+            padding-bottom: 0
+
+    h2
+        @include subH2
+        @include mobile
+            width: 100%
+            font-size: 3rem
+            text-align: center
+            line-height: 3rem
+        
+    .ice__text
+        color: #ffff
+        font-weight: 500
+        line-height: 250%
+
+        @include mobile
+            width: 100%
+            padding-left: 5%
+            line-height: 2rem
+
+.excursions
+    display: flex    
+    margin-top: 10%
+    height: 100vh
+
+    @include mobile
+        display: block
+
+    .excursions__img        
+        width: 57vw     
+        height: 100vh     
+
+        @include mobile
+            display: none 
+
+        img
+            width: 100%
+            height: 100%
+                  
+
+    .excursions_square
+        position: relative
+        div
+            position: absolute
+            height: 76px
+            width: 121px            
+            background-color: $text-color-title
+            margin-left: -4rem
+            margin-top: 25.5vh
+
+        @include mobile
+            display: none
+
+    .excursions__list
+        width: 43vw
+        margin-left: 80px     
+        height: 100vh   
+
+        @include mobile
+            margin-left: 5%
+
+        @include mobile
+            width: 90%
+        
+        
+        p
+            @include subtitles
+            margin-top: -1%
+
+            @include mobile
+                text-align: center
+                               
+
+        ol
+            display: flex
+            flex-direction: column
+            color: #ffff
+            line-height: 61px    
+            list-style-type: none
+            counter-reset: item
+            padding-left: 0 
+            flex-wrap: wrap           
+            align-content: center
+
+            li   
+                display: flex                  
+                align-content: center            
+                border-bottom: 2px solid $text-color-title                
+                font-family: $text-font
+                font-weight: 400
+                font-size: 3rem               
+                height: 19vh
+                align-items: center                
+
+                @include mobile
+                    font-size: 1.5rem
+                    border-bottom: none
+
+            li:before 
+                content: counter(item) ""
+                counter-increment: item
+                margin-right: 23px
+                font-size: 5rem
+
+                @include mobile
+                    margin-right: 10px
+                    font-size: 4rem
+
+                
+.jewel
+    margin-top: 10%
+    display: flex
+    width: 100vw
+    height: 100%       
+
+    @include mobile
+        display: block
+        margin-top: 10%
+        height: 120vh
+        width: 90vw
+
+    .jewel__article
+        width: 45%
+        height: 100%
+        padding-left: 8%
+        padding-right: 7%
+
+        @include mobile
+            width: 90vw
+            height: 50%            
+
+        .jewel__article-title
+            color: $text-color-title
+            font-size: 1.6rem
+            line-height: 33px
+            text-transform: uppercase
+            padding-bottom: 1.5rem
+            text-align: center
+
+            @include mobile
+                width: 90%
+                margin: 0
+                line-height: 1rem
+
+        h2
+            @include subH2
+
+            @include mobile
+                text-align: center
+                font-size: 2.5rem
+                line-height: 1rem
+            
+        .jewel__article-sub
+            font-weight: 300
+            color: $text-color-title
+            text-transform: uppercase
+            line-height: 250%
+            font-size: 1.8rem
+
+            @include mobile
+                text-align: center
+                line-height: 3rem
+
+        .jewel__article-text
+            font-weight: 500
+            line-height: 250%
+            color: #ffff
+
+            @include mobile
+                width: 95%
+                text-align: center
+
+        button
+            @include button
+
+            @include mobile
+            width: 50%
+            margin-left: 25%
+            margin-right: 25%
+            font-size: 1rem
+            
+    .jewel__img
+        width: 55%
+        height: 100%
+
+        @include mobile
+            display: none
+
+        img
+            width: 100%
+            height: 100%
+        
+.aurora
+    margin-top: 10%
+    background-image: url("../img/aurora 1.png")
+    background-size: cover
+    width: 100vw
+    height: 90vh
+    position: relative
+
+    @include mobile
+        margin: 0
+        padding: 0
+        height: 100vh
+   
+
+    div
+        padding-left: 8%
+
+        @include mobile
+            width: 100%
+            height: 100%
+            padding: 0
+
+    .aurora__article-title
+        @include subtitles
+
+        @include mobile
+            font-size: 1.5rem
+            text-align: center
+
+    h2
+        @include subH2
+
+        @include mobile
+            font-size: 2.5rem
+            text-align: center
+
+    .aurora__article-text
+        color: #ffff
+        font-family: $text-font
+        font-weight: 700
+        font-size: 2.2rem
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        line-height: 42px
+        width: 45%
+        height: 20%
+
+        @include mobile
+            font-size: 1.5rem
+            width: 90%
+            height: 100%
+            padding-left: 5%
+            text-align: center
+
+    button
+        @include button
+        @include mobile
+            width: 50%
+            margin-left: 25%
+            margin-right: 25%
+            font-size: 1rem
+            position: absolute
+            z-index: 3
+            top:80%
+            
+
+footer
+    width: 100vw
+    height: 5vh
+    display: flex    
+    margin-top: 2%
+
+    @include mobile
+        display: block
+
+    .footer__cop
+        line-height: 24px
+        letter-spacing: 4px
+        color: $text-grey
+        width: 70%
+        padding-left: 3%
+
+        @include mobile
+            width: 100%
+            text-align: center
+
+    .footer__li
+        list-style: none        
+        width: 30%
+        color: $text-grey
+        text-transform: uppercase
+        font-size: 1.3rem
+        padding-right: 3%
+
+        @include mobile
+            display: none
+
+        ul            
+            display: flex
+            justify-content: space-around
+            align-items: center
+            list-style: none
+            color: $text-grey
+            text-transform: uppercase
+            font-size: 1.3rem
+
+        
+            
+    
